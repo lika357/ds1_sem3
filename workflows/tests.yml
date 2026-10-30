@@ -1,0 +1,21 @@
+name: Тесты
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest       
+    steps:
+      - name: Скачать код
+        uses: actions/checkout@v4
+
+      - name: Установить clang и valgrind
+        run: sudo apt-get update && sudo apt-get install -y clang valgrind
+
+      - name: Тесты
+        run: make test
+
+      - name: Проверка памяти valgrind
+        run: make valgrind

@@ -1,0 +1,9 @@
+*.exe
+*.o
+*.obj
+*.dll
+*.pdb
+*.ttf
+lab
+test_runner
+test_runner_valgrind
